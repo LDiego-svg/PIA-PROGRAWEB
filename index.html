@@ -32,6 +32,27 @@
       font-size: 0.9rem;
       color: #666;
     }
+    /* Nuevo estilo para servicios */
+    .servicios .icono-servicio {
+      font-size: 2.5rem;
+      color: #daa520;
+      margin-bottom: 0.5rem;
+    }
+    .testimonios-pequenos {
+      background-color: #fff8dc;
+      padding: 2rem 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 3rem;
+    }
+    .faq dt {
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .faq dd {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -70,7 +91,6 @@
         });
       } else {
         loginArea.innerHTML = `<a href="registro.html" class="btn btn-dorado btn-sm">Registrarse</a>`;
-
       }
     }
 
@@ -143,6 +163,33 @@
     </div>
   </section>
 
+  <!-- Nueva sección: Servicios destacados -->
+  <section class="container mb-5 servicios">
+    <h2 class="mb-4 text-center">Servicios Destacados</h2>
+    <div class="row text-center justify-content-center g-4">
+      <div class="col-6 col-md-3">
+        <i class="bi bi-wifi icono-servicio"></i>
+        <h5>Internet de alta velocidad</h5>
+        <p>Conexión estable para estudiar y entretenimiento 24/7.</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="bi bi-shield-lock icono-servicio"></i>
+        <h5>Seguridad 24 horas</h5>
+        <p>Personal y sistemas para tu tranquilidad y protección.</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="bi bi-basket icono-servicio"></i>
+        <h5>Lavandería y limpieza</h5>
+        <p>Servicios regulares para mantener todo impecable.</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <i class="bi bi-bicycle icono-servicio"></i>
+        <h5>Transporte seguro</h5>
+        <p>Rutas y horarios para que llegues puntual a la universidad.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Más tarjetas con imágenes y botones -->
   <div class="container mb-5">
     <h2 class="mb-4 text-center">Nuestras Instalaciones</h2>
@@ -166,8 +213,8 @@
             class="img-fluid rounded mb-3"
             alt="Área común"
           />
-          <h5 class="nombre">Áreas Comunes</h5>
-          <p class="resena">Salones y espacios para socializar y estudiar.</p>
+          <h5 class="nombre">Área común</h5>
+          <p class="resena">Espacios para estudio, ocio y convivencia.</p>
           <a href="reservas.html" class="btn btn-warning fw-bold mt-3">Reservar</a>
         </div>
       </div>
@@ -176,65 +223,53 @@
           <img
             src="src/cafeteria.jpg"
             class="img-fluid rounded mb-3"
-            alt="Cafetería"
+            alt="Comedor"
           />
-          <h5 class="nombre">Cafetería</h5>
-          <p class="resena">Deliciosos alimentos y bebidas para recargar energías.</p>
+          <h5 class="nombre">Comedor</h5>
+          <p class="resena">Comidas nutritivas y variadas todos los días.</p>
           <a href="reservas.html" class="btn btn-warning fw-bold mt-3">Reservar</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Sección de precios de habitaciones -->
-  <section class="container mb-5">
-    <h2 class="mb-4 text-center">Cuotas 2025</h2>
-    <p class="text-center mb-4">Precios por residente, expresados en pesos mexicanos y sujetos a cambio sin previo aviso.</p>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card h-100 border-primary shadow-sm">
-          <div class="card-header bg-primary text-white text-center fw-bold">Habitación Individual</div>
-          <div class="card-body">
-            <p><strong>Contado:</strong> $62,250</p>
-            <p><strong>Plan 5:</strong> $13,000</p>
-            <p><strong>5 pagos:</strong> $65,000</p>
-            <p class="text-muted"><small>* Sujeto a disponibilidad</small></p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 border-success shadow-sm">
-          <div class="card-header bg-success text-white text-center fw-bold">Habitación Doble</div>
-          <div class="card-body">
-            <p><strong>Contado:</strong> $41,500</p>
-            <p><strong>Plan 5:</strong> $8,650</p>
-            <p><strong>5 pagos:</strong> $43,250</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 border-warning shadow-sm">
-          <div class="card-header bg-warning text-dark text-center fw-bold">Habitación Cuádruple</div>
-          <div class="card-body">
-            <p><strong>Contado:</strong> $29,900</p>
-            <p><strong>Plan 5:</strong> $6,200</p>
-            <p><strong>5 pagos:</strong> $31,000</p>
-          </div>
-        </div>
+  <!-- Nueva sección: Testimonios -->
+  <section class="container testimonios-pequenos mb-5">
+    <h2 class="mb-4 text-center">Lo que dicen nuestros residentes</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <blockquote class="blockquote text-center">
+          <p>"Gracias a Aurum Residencia he encontrado un ambiente perfecto para estudiar y hacer amigos."</p>
+          <footer class="blockquote-footer">Laura M., estudiante de Ingeniería</footer>
+        </blockquote>
+        <blockquote class="blockquote text-center mt-4">
+          <p>"La seguridad y el servicio aquí son excelentes, me siento muy tranquila viviendo aquí."</p>
+          <footer class="blockquote-footer">Carlos G., estudiante de Derecho</footer>
+        </blockquote>
       </div>
     </div>
   </section>
 
-  <div class="text-center mb-5">
-  <a href="habitaciones.html" class="btn btn-dorado btn-lg">Ver Habitaciones</a>
+  <!-- Nueva sección: Preguntas frecuentes -->
+  <section class="container mb-5 faq">
+    <h2 class="mb-4 text-center">Preguntas frecuentes</h2>
+    <dl>
+      <dt>¿Se puede visitar la residencia antes de reservar?</dt>
+      <dd>Sí, ofrecemos tours guiados con cita previa. Contáctanos para agendar tu visita.</dd>
+      <dt>¿Hay contratos mensuales o semestrales?</dt>
+      <dd>Ofrecemos contratos flexibles de 3, 6 y 12 meses.</dd>
+      <dt>¿Cómo se realizan los pagos?</dt>
+      <dd>Se aceptan transferencias bancarias, pagos en línea y en efectivo en recepción.</dd>
+    </dl>
+  </section>
 
-</div>
-
-  <!-- Footer -->
+  <!-- Pie de página -->
   <footer>
-    <p>&copy; 2025 Aurum Residencia. Proyecto universitario - FIME UANL.</p>
+    <p>© 2025 Aurum Residencia - Todos los derechos reservados</p>
+    <p>Contacto: info@aurumresidencia.com | Teléfono: +52 55 1234 5678</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.js"></script>
 </body>
 </html>
