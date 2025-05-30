@@ -23,7 +23,13 @@
 
   <div class="container mt-5">
     <h2 class="text-center mb-4">Reserva tu habitación</h2>
-    <form class="row g-3 needs-validation" novalidate>
+    
+    <!-- Mensaje de éxito -->
+    <div id="mensajeExito" class="alert alert-success text-center d-none" role="alert">
+      ¡Reservación exitosa! Te contactaremos pronto para confirmar.
+    </div>
+
+    <form class="row g-3 needs-validation" id="formReservacion" novalidate>
       <div class="col-md-6">
         <label for="nombre" class="form-label">Nombre completo</label>
         <input type="text" class="form-control" id="nombre" required>
@@ -51,12 +57,15 @@
 
       <div class="col-md-6">
         <label for="habitacion" class="form-label">Tipo de habitación</label>
-        <select class="form-select" id="habitacion" required>
-          <option selected disabled value="">Elegir...</option>
-          <option>Individual</option>
-          <option>Doble</option>
-          <option>Cuadruple</option>
-        </select>
+        <div class="input-group">
+          <select class="form-select" id="habitacion" required>
+            <option selected disabled value="">Elegir...</option>
+            <option>Individual</option>
+            <option>Doble</option>
+            <option>Cuádruple</option>
+          </select>
+          <a href="habitaciones.html" class="btn btn-outline-secondary" target="_blank">Ver tipos de habitaciones</a>
+        </div>
       </div>
 
       <div class="col-md-12">
@@ -72,9 +81,32 @@
 
   <footer class="text-center mt-5">
     <p>&copy; 2025 Aurum Residencia. Proyecto universitario - FIME UANL.</p>
-        <p>Contacto: info@aurumresidencia.com | Teléfono: 81 5623 5489</p>
+    <p>Contacto: info@aurumresidencia.com | Teléfono: 81 5623 5489</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script para mostrar mensaje de éxito -->
+  <script>
+    document.getElementById('formReservacion').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evita recargar la página
+      const form = event.target;
+
+      if (form.checkValidity()) {
+        // Muestra el mensaje de éxito
+        document.getElementById('mensajeExito').classList.remove('d-none');
+
+        // Limpia el formulario
+        form.reset();
+
+        // Oculta el mensaje después de unos segundos
+        setTimeout(() => {
+          document.getElementById('mensajeExito').classList.add('d-none');
+        }, 5000);
+      } else {
+        form.classList.add('was-validated');
+      }
+    });
+  </script>
 </body>
 </html>
