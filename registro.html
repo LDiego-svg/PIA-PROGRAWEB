@@ -22,8 +22,13 @@
     </ol>
   </nav>
 
+<<<<<<< HEAD
   <div class="container mt-5" style="max-width: 500px;">
     <form id="registroForm" method="POST" action="procesar_registro.php" novalidate>
+=======
+  <div class="container mt-5" style="max-width: 400px;">
+    <form id="registroForm" novalidate>
+>>>>>>> 944b805bebe286e05376550438b1ce9b672248da
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre completo</label>
         <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -50,8 +55,13 @@
   </div>
 
   <footer class="text-center mt-5">
+<<<<<<< HEAD
     <p>&copy; 2025 Aurum Residencia. Proyecto universitario.</p>
     <p>Contacto: info@aurumresidencia.com | Teléfono: 81 5623 5489</p>
+=======
+    <p>&copy; 2025 Aurum Residencia. Proyecto universitario - FIME UANL.</p>
+    <p>Contacto: info@aurumresidencia.com | Teléfono: 81 5623 5489</p>    
+>>>>>>> 944b805bebe286e05376550438b1ce9b672248da
   </footer>
 
   <script>
@@ -65,8 +75,13 @@
       const confirmar = document.getElementById('confirmar').value;
       const mensajeDiv = document.getElementById('mensaje');
 
+<<<<<<< HEAD
       if (!nombre || !correo || !telefono || !contrasena || !confirmar) {
         mostrarMensaje('Por favor, completa todos los campos.', 'danger');
+=======
+      if (nombre.length === 0) {
+        mostrarMensaje('El nombre completo es obligatorio.', 'danger');
+>>>>>>> 944b805bebe286e05376550438b1ce9b672248da
         return;
       }
 
@@ -91,8 +106,13 @@
         return;
       }
 
+<<<<<<< HEAD
       mensajeDiv.innerHTML = '';
       this.submit();
+=======
+      mostrarMensaje('¡Registro exitoso! Bienvenido a Aurum Residencia.', 'success');
+      this.reset(); // Limpia el formulario
+>>>>>>> 944b805bebe286e05376550438b1ce9b672248da
     });
 
     function mostrarMensaje(texto, tipo) {

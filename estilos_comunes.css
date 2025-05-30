@@ -139,3 +139,13 @@ footer {
   background-color: #c89e1d;
   color: white;
 }
+.btn-primary {
+  background-color: #daa520;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #c6961d;
+  color: rgb(0, 0, 0);
+}

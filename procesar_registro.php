@@ -2,8 +2,8 @@
 // Parámetros de conexión, ajusta según tu entorno
 $host = 'localhost';
 $db = 'aurum';
-$user = 'tu_usuario';
-$pass = 'tu_contraseña';
+$user = 'root';
+$pass = '';
 $charset = 'utf8mb4';
 
 // Conexión PDO
