@@ -1,0 +1,129 @@
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex: 1;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #fffbea;
+  color: #333;
+  padding-bottom: 0; /* eliminamos padding-bottom para que no interfiera */
+}
+
+
+/* Reset y tipografía */
+body, h1, h2, h5, p, ol, li, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #fffbea;
+  color: #333;
+  padding-bottom: 60px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 3rem;
+  color: #daa520;
+  font-weight: 900;
+  margin: 40px 0 20px;
+}
+
+/* Menú */
+.menu {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.menu ol {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  margin: 0 15px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.menu-item a:hover,
+.menu-item.active a {
+  background-color: #444;
+  color: #ffd700;
+}
+
+/* Contenido principal */
+.descripcion {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+/* Testimonios / tarjetas */
+.testimonios h2 {
+  color: #b8860b;
+  font-weight: bold;
+}
+
+.tarjeta {
+  background-color: #fff;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: scale(1.02);
+}
+
+.tarjeta img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.nombre {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #b8860b;
+}
+
+.resena {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 5px;
+  quotes: "“" "”";
+}
+
+.resena::before {
+  content: open-quote;
+}
+.resena::after {
+  content: close-quote;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto; /* Esto lo empuja al fondo cuando sea necesario */
+}

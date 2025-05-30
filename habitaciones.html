@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Habitaciones - Aurum Residencia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  />
+  <link rel="stylesheet" href="estilos_comunes.css" />
+  <style>
+    .habitacion img {
+      max-height: 250px;
+      object-fit: cover;
+    }
+    .habitacion {
+      border: 1px solid #ddd;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .habitacion:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+    footer {
+      margin-top: 3rem;
+      padding: 1rem 0;
+      background-color: #f8f9fa;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="titulo">
+    <a href="index.html" style="text-decoration: none; color: inherit;">Aurum Residencia</a>
+  </h1>
+
+  <nav class="menu">
+    <ol>
+      <li class="menu-item"><a href="index.html">Home</a></li>
+      <li class="menu-item"><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+      <li class="menu-item"><a href="ubicacion.html">Ubicación</a></li>
+      <li class="menu-item"><a href="cuenta.html">Cuenta</a></li>
+      <li class="menu-item"><a href="reservas.html">Reservas</a></li>
+      <li class="menu-item" id="loginArea"></li>
+    </ol>
+  </nav>
+
+  <script>
+    function updateLoginArea() {
+      const loginArea = document.getElementById('loginArea');
+      const usuario = localStorage.getItem('usuarioAurum');
+
+      if (usuario) {
+        loginArea.innerHTML = `
+          <span>Hola, <strong>${usuario}</strong></span>
+          <button id="logoutBtn" class="btn btn-link btn-sm">Cerrar sesión</button>
+        `;
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+          localStorage.removeItem('usuarioAurum');
+          updateLoginArea();
+        });
+      } else {
+        loginArea.innerHTML = `<a href="registro.html" class="btn btn-primary btn-sm">Registrarse</a>`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', updateLoginArea);
+  </script>
+
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Tipos de Habitaciones</h2>
+    <div class="row g-4">
+
+      <!-- Habitación Individual -->
+      <div class="col-md-4">
+        <div class="habitacion p-3">
+          <img src="src/habitacion_individual.jpg" class="w-100 mb-3 rounded" alt="Habitación Individual">
+          <h4>Habitación Individual</h4>
+          <p>Espacio privado ideal para quienes buscan tranquilidad y concentración. Completamente equipada.</p>
+          <ul>
+            <li>Cama individual con colchón ortopédico</li>
+            <li>Escritorio, silla ergonómica y lámpara de estudio</li>
+            <li>Closet amplio con espejo</li>
+            <li>Mini refrigerador y estantería</li>
+            <li>Baño privado</li>
+            <li>Wi-Fi de alta velocidad</li>
+            <li>Servicio de limpieza semanal</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Habitación Doble -->
+      <div class="col-md-4">
+        <div class="habitacion p-3">
+          <img src="src/habitacion_doble.jpg" class="w-100 mb-3 rounded" alt="Habitación Doble">
+          <h4>Habitación Doble</h4>
+          <p>Compartida por dos residentes, con privacidad y comodidad. Ideal para amigos o compañeros de carrera.</p>
+          <ul>
+            <li>Dos camas individuales</li>
+            <li>Dos escritorios y dos sillas de estudio</li>
+            <li>Closet y estante para cada residente</li>
+            <li>Baño compartido dentro de la habitación</li>
+            <li>Mini refrigerador</li>
+            <li>Wi-Fi y ventilación natural</li>
+            <li>Servicio de limpieza semanal</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Habitación Cuádruple -->
+      <div class="col-md-4">
+        <div class="habitacion p-3">
+          <img src="src/habitacion_cuadruple.jpg" class="w-100 mb-3 rounded" alt="Habitación Cuádruple">
+          <h4>Habitación Cuádruple</h4>
+          <p>Perfecta para grupos de estudio o amigos. Espaciosa, funcional y económica.</p>
+          <ul>
+            <li>Cuatro camas individuales</li>
+            <li>Cuatro escritorios con sillas y lámparas</li>
+            <li>Lockers personales</li>
+            <li>Dos baños compartidos dentro de la habitación</li>
+            <li>Área común pequeña dentro del cuarto</li>
+            <li>Wi-Fi y ventilación cruzada</li>
+            <li>Servicio de limpieza semanal</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="text-center mb-5">
+    <a href="reservas.html" class="btn btn-warning btn-lg fw-bold">Reservar Ahora</a>
+  </div>
+
+  <footer>
+    <p>&copy; Aurum Residencia. Proyecto.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
