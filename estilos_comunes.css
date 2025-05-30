@@ -127,3 +127,15 @@ footer {
   padding: 12px;
   margin-top: auto; /* Esto lo empuja al fondo cuando sea necesario */
 }
+
+.btn-dorado {
+  background-color: #daa520;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-dorado:hover {
+  background-color: #c89e1d;
+  color: white;
+}
