@@ -67,7 +67,7 @@
           location.reload();
         });
       } else {
-        loginArea.innerHTML = `<a href="registro.html" class="btn btn-primary btn-sm">Registrarse</a>`;
+        loginArea.innerHTML = ``; // No mostrar botón de registro aquí
       }
     }
 
@@ -90,7 +90,8 @@
           <div class="alert alert-warning" role="alert">
             Debes registrarte primero para ver los datos de tu cuenta.
           </div>
-          <a href="registro.html" class="btn btn-primary">Ir a Registro</a>
+          <a href="registro.html" class="btn btn-warning">Ir a Registro</a>
+
         `;
       }
     }
