@@ -58,7 +58,7 @@
       if (usuario) {
         loginArea.innerHTML = `
           <span>Hola, <strong>${usuario}</strong></span>
-          <button id="logoutBtn" class="btn btn-link btn-sm">Cerrar sesión</button>
+          <button id="logoutBtn" class="btn btn-dorado btn-sm">Cerrar sesión</button>
         `;
         document.getElementById('logoutBtn').addEventListener('click', () => {
           localStorage.removeItem('usuarioAurum');
